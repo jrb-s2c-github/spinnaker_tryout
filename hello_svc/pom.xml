@@ -42,6 +42,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <jkube.build.strategy>jib</jkube.build.strategy>
+
+        <jkube.generator.name>docker.io/rohankanojia/spring-boot-with-jib:${project.version}</jkube.generator.name>
     </properties>
 
     <distributionManagement>
@@ -108,6 +110,7 @@
                         <groupId>org.eclipse.jkube</groupId>
                         <artifactId>kubernetes-maven-plugin</artifactId>
                         <version>${jkube.version}</version>
+
                     </plugin>
                 </plugins>
             </build>
@@ -142,7 +145,7 @@
                                         </assembly>
                                         <cmd>java -jar /deployments/${project.artifactId}-${project.version}.jar</cmd>
                                         <ports>
-                                          <port>8080</port>
+                                          <port>9090</port>
                                         </ports>
                                     </build>
                                 </image>
