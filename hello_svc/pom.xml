@@ -43,7 +43,10 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <jkube.build.strategy>jib</jkube.build.strategy>
 
-        <jkube.generator.name>hello-svc:${project.version}</jkube.generator.name>
+<!--        <jkube.docker.push.registry></jkube.docker.push.registry>-->
+<!--        <jkube.generator.name>hello-svc:${project.version}</jkube.generator.name>-->
+        <jkube.generator.name>docker.io/rohankanojia/spring-boot-with-jib:${project.version}</jkube.generator.name>
+
     </properties>
 
     <distributionManagement>
