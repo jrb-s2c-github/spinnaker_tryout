@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 0216077d25f11be5d2d0bab50b33a5a7e6055cd0
-      jkube.io/git-branch: 0216077d25f11be5d2d0bab50b33a5a7e6055cd0
+      jkube.io/git-commit: ff2b5f28882ce213adadc29f1ada22c4f20a30f4
+      jkube.io/git-branch: ff2b5f28882ce213adadc29f1ada22c4f20a30f4
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -36,8 +36,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 0216077d25f11be5d2d0bab50b33a5a7e6055cd0
-      jkube.io/git-branch: 0216077d25f11be5d2d0bab50b33a5a7e6055cd0
+      jkube.io/git-commit: ff2b5f28882ce213adadc29f1ada22c4f20a30f4
+      jkube.io/git-branch: ff2b5f28882ce213adadc29f1ada22c4f20a30f4
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -60,8 +60,8 @@ items:
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 0216077d25f11be5d2d0bab50b33a5a7e6055cd0
-          jkube.io/git-branch: 0216077d25f11be5d2d0bab50b33a5a7e6055cd0
+          jkube.io/git-commit: ff2b5f28882ce213adadc29f1ada22c4f20a30f4
+          jkube.io/git-branch: ff2b5f28882ce213adadc29f1ada22c4f20a30f4
         labels:
           app: hello-svc
           provider: jkube
@@ -78,7 +78,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.103.219:5000/spinnaker_poc/hello-svc:1.0.2
+          image: localhost:5000/spinnaker_poc/hello-svc:1.0.2
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
