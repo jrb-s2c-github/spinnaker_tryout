@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 676f3eb87fe275c430298e2662c0bcd2d1becb11
-      jkube.io/git-branch: 676f3eb87fe275c430298e2662c0bcd2d1becb11
+      jkube.io/git-commit: a60c7cc8d6aa302100eb2a78f0f6b728661b7d1a
+      jkube.io/git-branch: a60c7cc8d6aa302100eb2a78f0f6b728661b7d1a
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -36,8 +36,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 676f3eb87fe275c430298e2662c0bcd2d1becb11
-      jkube.io/git-branch: 676f3eb87fe275c430298e2662c0bcd2d1becb11
+      jkube.io/git-commit: a60c7cc8d6aa302100eb2a78f0f6b728661b7d1a
+      jkube.io/git-branch: a60c7cc8d6aa302100eb2a78f0f6b728661b7d1a
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -60,8 +60,8 @@ items:
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 676f3eb87fe275c430298e2662c0bcd2d1becb11
-          jkube.io/git-branch: 676f3eb87fe275c430298e2662c0bcd2d1becb11
+          jkube.io/git-commit: a60c7cc8d6aa302100eb2a78f0f6b728661b7d1a
+          jkube.io/git-branch: a60c7cc8d6aa302100eb2a78f0f6b728661b7d1a
         labels:
           app: hello-svc
           provider: jkube
