@@ -19,7 +19,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hello_svc</artifactId>
+    <artifactId>hello-svc</artifactId>
     <groupId>prmgmdpc-spinnakerpoc</groupId>
     <version>1.0.2</version>
     <packaging>jar</packaging>
@@ -44,7 +44,7 @@
         <jkube.build.strategy>jib</jkube.build.strategy>
 <!--        <jkube.docker.push.registry></jkube.docker.push.registry>-->
 <!--        <jkube.generator.name>hello-svc:${project.version}</jkube.generator.name>-->
-        <jkube.generator.name>localhost/spinnaker_poc/hello-svc:${project.version}</jkube.generator.name>
+        <jkube.generator.name>localhost:5000/spinnaker_poc/hello-svc:${project.version}</jkube.generator.name>
     </properties>
 
     <distributionManagement>
