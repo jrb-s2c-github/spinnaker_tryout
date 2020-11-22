@@ -5,7 +5,7 @@ metadata:
   labels:
     app: hello-svc
     provider: jkube
-    version: 1.0.13
+    version: 1.0.14
     group: prmgmdpc-spinnakerpoc
   name: hello-svc
 data:
