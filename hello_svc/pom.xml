@@ -129,7 +129,7 @@
                         <configuration>
                             <images>
                                 <image>
-                                    <name>spinnaker_poc/hello-svc</name>
+                                    <name>172.17.103.220:443/spinnaker_poc/hello-svc:${project.version}</name>
                                     <build>
                                         <from>fabric8/java-centos-openjdk8-jdk:1.5.6</from>
                                         <assembly>
