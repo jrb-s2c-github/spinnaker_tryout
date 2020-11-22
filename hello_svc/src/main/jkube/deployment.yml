@@ -10,8 +10,8 @@ spec:
           configMap:
             name: ${project.artifactId}
             items:
-              - key: my_name
-                path: my_name
+              - key: application.properties
+                path: application.properties
       containers:
         - volumeMounts:
             - name: config
