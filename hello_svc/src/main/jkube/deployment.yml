@@ -1,6 +1,6 @@
 metadata:
   annotations:
-    configmap.jkube.io/update-on-change:
+    configmap.jkube.io/update-on-change: ${project.artifactId}
 spec:
   replicas: 1
   template:
