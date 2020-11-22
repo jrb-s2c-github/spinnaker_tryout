@@ -1,3 +1,5 @@
+TEST
+
 # Spring Boot Sample with JIB Build Mode
 
 This is also a Spring Boot application to demonstrate how Eclipse JKube handles Kubernetes/OpenShift workflows by 
