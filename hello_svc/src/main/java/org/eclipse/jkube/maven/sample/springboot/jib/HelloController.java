@@ -26,6 +26,6 @@ public class HelloController {
         return "Greetings from " + name + " (Powered by Spring Boot and JIB)!!";
     }
 
-    @Value("${name}")
+    @Value("${my_name}")
     private String name;
 }
