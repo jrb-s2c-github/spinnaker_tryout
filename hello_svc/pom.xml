@@ -129,7 +129,7 @@
                         <configuration>
                             <images>
                                 <image>
-                                    <name>rohankanojia/spring-boot-sample</name>
+                                    <name>spinnaker_poc/hello-svc</name>
                                     <build>
                                         <from>fabric8/java-centos-openjdk8-jdk:1.5.6</from>
                                         <assembly>
