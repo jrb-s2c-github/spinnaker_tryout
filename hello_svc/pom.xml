@@ -42,8 +42,9 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <jkube.build.strategy>jib</jkube.build.strategy>
-        <jkube.generator.name>172.17.103.220:443/spinnaker_poc/hello-svc:${project.version}.${buildNumber}</jkube.generator.name>
-<!--        <jkube.generator.name>localhost:5000/spinnaker_poc/hello-svc:${project.version}-{maven.build.timestamp}</jkube.generator.name>-->
+        <jkube.generator.name>172.17.103.220:443/spinnaker_poc/hello-svc:${project.version}.${buildNumber}
+        </jkube.generator.name>
+        <!--        <jkube.generator.name>localhost:5000/spinnaker_poc/hello-svc:${project.version}-{maven.build.timestamp}</jkube.generator.name>-->
     </properties>
 
     <distributionManagement>
@@ -93,38 +94,38 @@
     </dependencies>
 
     <build>
-<!--        <finalName>${project.artifactId}-${project.version}-${maven.build.timestamp}</finalName>-->
+        <!--        <finalName>${project.artifactId}-${project.version}-${maven.build.timestamp}</finalName>-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <id>buildnumber</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <format>{0,number}</format>
+                    <items>
+                        <item>buildNumber</item>
+                    </items>
+                    <doCheck>false</doCheck>
+                    <doUpdate>false</doUpdate>
+                    <revisionOnScmFailure>unknownbuild</revisionOnScmFailure>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
-    <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>buildnumber-maven-plugin</artifactId>
-        <version>1.4</version>
-        <executions>
-            <execution>
-                <id>buildnumber</id>
-                <phase>validate</phase>
-                <goals>
-                    <goal>create</goal>
-                </goals>
-            </execution>
-        </executions>
-        <configuration>
-            <format>{0,number}</format>
-            <items>
-                <item>buildNumber</item>
-            </items>
-            <doCheck>false</doCheck>
-            <doUpdate>false</doUpdate>
-            <revisionOnScmFailure>unknownbuild</revisionOnScmFailure>
-        </configuration>
-    </plugin>
-
     <profiles>
         <profile>
             <id>Jib-Zero-Config</id>
@@ -169,7 +170,7 @@
                                         </assembly>
                                         <cmd>java -jar /deployments/${project.artifactId}-${project.version}.jar</cmd>
                                         <ports>
-                                          <port>9090</port>
+                                            <port>9090</port>
                                         </ports>
                                     </build>
                                 </image>
