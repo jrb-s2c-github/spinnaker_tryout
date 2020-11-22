@@ -1,0 +1,3 @@
+metadata:
+  annotations:
+    configmap.jkube.io/update-on-change: ${project.artifactId}
