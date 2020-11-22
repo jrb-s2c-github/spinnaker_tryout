@@ -21,7 +21,7 @@
 
     <artifactId>hello-svc</artifactId>
     <groupId>prmgmdpc-spinnakerpoc</groupId>
-    <version>1.0.10</version>
+    <version>1.0.11</version>
     <packaging>jar</packaging>
 
     <parent>
