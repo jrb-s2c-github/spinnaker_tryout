@@ -1,4 +1,4 @@
-TEST2
+TEST3
 
 # Spring Boot Sample with JIB Build Mode
 
