@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 29a6fc9571b71d6a76cd4d06562c9831ac985368
-      jkube.io/git-branch: 29a6fc9571b71d6a76cd4d06562c9831ac985368
+      jkube.io/git-commit: 21af77f3f5a0017dbca921547d8ec5981fad950c
+      jkube.io/git-branch: 21af77f3f5a0017dbca921547d8ec5981fad950c
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -18,7 +18,7 @@ items:
       expose: "true"
       app: hello-svc
       provider: jkube
-      version: 1.0.14
+      version: 1.0.15
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
@@ -38,25 +38,26 @@ items:
     labels:
       app: hello-svc
       provider: jkube
-      version: 1.0.14
+      version: 1.0.15
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   data:
-    my_name: Kubelet2
+    application.properties: |
+      my_name: Kubelet2
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 29a6fc9571b71d6a76cd4d06562c9831ac985368
-      jkube.io/git-branch: 29a6fc9571b71d6a76cd4d06562c9831ac985368
+      jkube.io/git-commit: 21af77f3f5a0017dbca921547d8ec5981fad950c
+      jkube.io/git-branch: 21af77f3f5a0017dbca921547d8ec5981fad950c
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
       app: hello-svc
       provider: jkube
-      version: 1.0.14
+      version: 1.0.15
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
@@ -70,16 +71,16 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 29a6fc9571b71d6a76cd4d06562c9831ac985368
+          jkube.io/git-branch: 21af77f3f5a0017dbca921547d8ec5981fad950c
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 29a6fc9571b71d6a76cd4d06562c9831ac985368
+          jkube.io/git-commit: 21af77f3f5a0017dbca921547d8ec5981fad950c
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
           provider: jkube
-          version: 1.0.14
+          version: 1.0.15
           group: prmgmdpc-spinnakerpoc
       spec:
         containers:
@@ -92,7 +93,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.103.220:443/spinnaker_poc/hello-svc:1.0.14
+          image: 172.17.103.220:443/spinnaker_poc/hello-svc:1.0.15
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
@@ -129,7 +130,7 @@ items:
         volumes:
         - configMap:
             items:
-            - key: my_name
-              path: my_name
+            - key: application.properties
+              path: application.properties
             name: hello-svc
           name: config

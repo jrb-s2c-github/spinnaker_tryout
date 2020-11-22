@@ -5,8 +5,9 @@ metadata:
   labels:
     app: hello-svc
     provider: jkube
-    version: 1.0.14
+    version: 1.0.15
     group: prmgmdpc-spinnakerpoc
   name: hello-svc
 data:
-  my_name: Kubelet2
+  application.properties: |
+    my_name: Kubelet2
