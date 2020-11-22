@@ -1,3 +1,3 @@
 data:
-  application.properties: 
+  application.properties: |
    my_name: Kubelet2
