@@ -38,7 +38,7 @@
     </description>
 
     <properties>
-        <jkube.version>${project.version}</jkube.version>
+        <jkube.version>1.0.2</jkube.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <jkube.build.strategy>jib</jkube.build.strategy>
