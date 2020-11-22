@@ -7,15 +7,15 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 5218882a4d3f6729a8bd48e4de207e540297c9d3
-      jkube.io/git-branch: 5218882a4d3f6729a8bd48e4de207e540297c9d3
+      jkube.io/git-commit: 5f8a0bfdf6bb371ece1ea5a36b823d8292764166
+      jkube.io/git-branch: 5f8a0bfdf6bb371ece1ea5a36b823d8292764166
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
       expose: "true"
       app: hello-svc
       provider: jkube
-      version: 1.0.10
+      version: 1.0.11
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
@@ -35,7 +35,7 @@ items:
     labels:
       app: hello-svc
       provider: jkube
-      version: 1.0.10
+      version: 1.0.11
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   data:
@@ -45,14 +45,14 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 5218882a4d3f6729a8bd48e4de207e540297c9d3
-      jkube.io/git-branch: 5218882a4d3f6729a8bd48e4de207e540297c9d3
+      jkube.io/git-commit: 5f8a0bfdf6bb371ece1ea5a36b823d8292764166
+      jkube.io/git-branch: 5f8a0bfdf6bb371ece1ea5a36b823d8292764166
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
       app: hello-svc
       provider: jkube
-      version: 1.0.10
+      version: 1.0.11
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
@@ -69,12 +69,12 @@ items:
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 5218882a4d3f6729a8bd48e4de207e540297c9d3
-          jkube.io/git-branch: 5218882a4d3f6729a8bd48e4de207e540297c9d3
+          jkube.io/git-commit: 5f8a0bfdf6bb371ece1ea5a36b823d8292764166
+          jkube.io/git-branch: 5f8a0bfdf6bb371ece1ea5a36b823d8292764166
         labels:
           app: hello-svc
           provider: jkube
-          version: 1.0.10
+          version: 1.0.11
           group: prmgmdpc-spinnakerpoc
       spec:
         containers:
@@ -87,7 +87,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.103.220:443/spinnaker-poc/hello-svc:1.0.10
+          image: 172.17.103.220:443/spinnaker-poc/hello-svc:1.0.11
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
