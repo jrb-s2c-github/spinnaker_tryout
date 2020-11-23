@@ -46,6 +46,8 @@
         <!--        <jkube.generator.name>localhost:5000/spinnaker_poc/hello-svc:${project.version}-{maven.build.timestamp}</jkube.generator.name>-->
     </properties>
 
+    <!-- TESTING -->
+    
     <distributionManagement>
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
