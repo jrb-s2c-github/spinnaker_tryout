@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 49d77b4cf0cc6da6d98fc9923d488f8d2f5f4268
-      jkube.io/git-branch: 49d77b4cf0cc6da6d98fc9923d488f8d2f5f4268
+      jkube.io/git-commit: 1ad8934be8abcb6d22bf8d326c79390b9afea157
+      jkube.io/git-branch: 1ad8934be8abcb6d22bf8d326c79390b9afea157
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -43,15 +43,15 @@ items:
     name: hello-svc
   data:
     application.properties: |
-      my_name: Kubelet8
+      my_name: Kubelet9
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 49d77b4cf0cc6da6d98fc9923d488f8d2f5f4268
-      jkube.io/git-branch: 49d77b4cf0cc6da6d98fc9923d488f8d2f5f4268
+      jkube.io/git-commit: 1ad8934be8abcb6d22bf8d326c79390b9afea157
+      jkube.io/git-branch: 1ad8934be8abcb6d22bf8d326c79390b9afea157
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -71,11 +71,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 49d77b4cf0cc6da6d98fc9923d488f8d2f5f4268
+          jkube.io/git-branch: 1ad8934be8abcb6d22bf8d326c79390b9afea157
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 49d77b4cf0cc6da6d98fc9923d488f8d2f5f4268
+          jkube.io/git-commit: 1ad8934be8abcb6d22bf8d326c79390b9afea157
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
