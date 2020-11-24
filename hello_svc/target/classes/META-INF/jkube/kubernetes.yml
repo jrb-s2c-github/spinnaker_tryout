@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 976a363aae59fc728e36c206657984705c86b695
-      jkube.io/git-branch: 976a363aae59fc728e36c206657984705c86b695
+      jkube.io/git-commit: 23b099db0f6a2995bdffe6ede494e974cfe5732e
+      jkube.io/git-branch: 23b099db0f6a2995bdffe6ede494e974cfe5732e
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -47,8 +47,8 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 976a363aae59fc728e36c206657984705c86b695
-      jkube.io/git-branch: 976a363aae59fc728e36c206657984705c86b695
+      jkube.io/git-commit: 23b099db0f6a2995bdffe6ede494e974cfe5732e
+      jkube.io/git-branch: 23b099db0f6a2995bdffe6ede494e974cfe5732e
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -68,11 +68,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 976a363aae59fc728e36c206657984705c86b695
+          jkube.io/git-branch: 23b099db0f6a2995bdffe6ede494e974cfe5732e
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 976a363aae59fc728e36c206657984705c86b695
+          jkube.io/git-commit: 23b099db0f6a2995bdffe6ede494e974cfe5732e
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
@@ -90,7 +90,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.33.117:443/spinnaker-poc/hello-svc:20201124-145712.976a363
+          image: 172.17.33.117:443/spinnaker-poc/hello-svc:20201124-194352.23b099d
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
