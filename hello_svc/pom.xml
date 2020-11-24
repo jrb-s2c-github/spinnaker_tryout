@@ -175,7 +175,7 @@
                                 <image>
                                     <name>172.17.33.117:443/spinnaker-poc/hello-svc:${version.number}</name>
                                     <build>
-                                      <!--    <from>fabric8/java-centos-openjdk8-jdk:1.5.6</from>-->
+                                         <from>fabric8/java-centos-openjdk8-jdk:1.5.6</from>
                                         <assembly>
                                             <inline>
                                                 <id>copy-test-file</id>
