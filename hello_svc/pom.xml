@@ -21,7 +21,7 @@
 
     <artifactId>hello-svc</artifactId>
     <groupId>prmgmdpc-spinnakerpoc</groupId>
-    <version>1.0.16</version>
+    <version>1.0.17</version>
     <packaging>jar</packaging>
 
     <parent>
@@ -158,6 +158,8 @@
                         <version>${jkube.version}</version>
                     </plugin>
                 </plugins>
+
+<!--                <finalName>hello-svc-${version.number}</finalName>-->
             </build>
         </profile>
         <profile>
