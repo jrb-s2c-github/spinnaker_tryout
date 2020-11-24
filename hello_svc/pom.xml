@@ -170,13 +170,6 @@
                         <groupId>org.eclipse.jkube</groupId>
                         <artifactId>kubernetes-maven-plugin</artifactId>
                         <version>${jkube.version}</version>
-                         <executions>
-                            <execution>
-                                <goals>
-                                    <goal>resource</goal>
-                                </goals>
-                            </execution>
-                        </executions>
                         <configuration>
                             <images>
                                 <image>
