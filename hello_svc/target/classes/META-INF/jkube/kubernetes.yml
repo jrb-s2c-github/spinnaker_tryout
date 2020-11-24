@@ -7,26 +7,23 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: a45d48af61f3b4a0155125637f092ba651a2bdf8
-      jkube.io/git-branch: a45d48af61f3b4a0155125637f092ba651a2bdf8
+      jkube.io/git-commit: ef3d870cd5c0c503c8f47946435f56e8d5ff3722
+      jkube.io/git-branch: ef3d870cd5c0c503c8f47946435f56e8d5ff3722
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
-      prometheus.io/path: /metrics
-      prometheus.io/port: "9779"
-      prometheus.io/scrape: "true"
     labels:
       expose: "true"
       app: hello-svc
       provider: jkube
-      version: 1.0.16
+      version: 1.0.17
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
     ports:
     - name: http
-      port: 8080
+      port: 9090
       protocol: TCP
-      targetPort: 8080
+      targetPort: 9090
     selector:
       app: hello-svc
       provider: jkube
@@ -38,7 +35,7 @@ items:
     labels:
       app: hello-svc
       provider: jkube
-      version: 1.0.16
+      version: 1.0.17
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   data:
@@ -50,14 +47,14 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: a45d48af61f3b4a0155125637f092ba651a2bdf8
-      jkube.io/git-branch: a45d48af61f3b4a0155125637f092ba651a2bdf8
+      jkube.io/git-commit: ef3d870cd5c0c503c8f47946435f56e8d5ff3722
+      jkube.io/git-branch: ef3d870cd5c0c503c8f47946435f56e8d5ff3722
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
       app: hello-svc
       provider: jkube
-      version: 1.0.16
+      version: 1.0.17
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
@@ -71,16 +68,16 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: a45d48af61f3b4a0155125637f092ba651a2bdf8
+          jkube.io/git-branch: ef3d870cd5c0c503c8f47946435f56e8d5ff3722
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: a45d48af61f3b4a0155125637f092ba651a2bdf8
+          jkube.io/git-commit: ef3d870cd5c0c503c8f47946435f56e8d5ff3722
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
           provider: jkube
-          version: 1.0.16
+          version: 1.0.17
           group: prmgmdpc-spinnakerpoc
       spec:
         containers:
@@ -93,7 +90,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.33.117:443/spinnaker_poc/hello-svc:1.0.16
+          image: 172.17.33.117:443/spinnaker-poc/hello-svc:20201124-144602.ef3d870
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
@@ -103,16 +100,10 @@ items:
               scheme: HTTP
             initialDelaySeconds: 180
             successThreshold: 1
-          name: spring-boot
+          name: spinnaker-poc-hello-svc
           ports:
-          - containerPort: 8080
-            name: http
-            protocol: TCP
-          - containerPort: 9779
-            name: prometheus
-            protocol: TCP
-          - containerPort: 8778
-            name: jolokia
+          - containerPort: 9090
+            name: websm
             protocol: TCP
           readinessProbe:
             failureThreshold: 3
