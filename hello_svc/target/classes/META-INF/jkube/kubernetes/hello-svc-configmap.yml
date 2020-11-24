@@ -10,4 +10,4 @@ metadata:
   name: hello-svc
 data:
   application.properties: |
-    my_name: Kubelet6
+    my_name: Kubelet8
