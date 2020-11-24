@@ -7,15 +7,15 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 39449414b407eaa0e0020bd65674fb724eba666d
-      jkube.io/git-branch: 39449414b407eaa0e0020bd65674fb724eba666d
+      jkube.io/git-commit: 976a363aae59fc728e36c206657984705c86b695
+      jkube.io/git-branch: 976a363aae59fc728e36c206657984705c86b695
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
       expose: "true"
       app: hello-svc
       provider: jkube
-      version: 1.0.17
+      version: 1.0.18
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
@@ -35,7 +35,7 @@ items:
     labels:
       app: hello-svc
       provider: jkube
-      version: 1.0.17
+      version: 1.0.18
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   data:
@@ -47,14 +47,14 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 39449414b407eaa0e0020bd65674fb724eba666d
-      jkube.io/git-branch: 39449414b407eaa0e0020bd65674fb724eba666d
+      jkube.io/git-commit: 976a363aae59fc728e36c206657984705c86b695
+      jkube.io/git-branch: 976a363aae59fc728e36c206657984705c86b695
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
       app: hello-svc
       provider: jkube
-      version: 1.0.17
+      version: 1.0.18
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
@@ -68,16 +68,16 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 39449414b407eaa0e0020bd65674fb724eba666d
+          jkube.io/git-branch: 976a363aae59fc728e36c206657984705c86b695
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 39449414b407eaa0e0020bd65674fb724eba666d
+          jkube.io/git-commit: 976a363aae59fc728e36c206657984705c86b695
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
           provider: jkube
-          version: 1.0.17
+          version: 1.0.18
           group: prmgmdpc-spinnakerpoc
       spec:
         containers:
@@ -90,7 +90,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.33.117:443/spinnaker-poc/hello-svc:20201124-144834.3944941
+          image: 172.17.33.117:443/spinnaker-poc/hello-svc:20201124-145712.976a363
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
