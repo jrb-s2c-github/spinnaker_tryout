@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: ed7285c3c75f19f4de05588f49b50dfb3f7f570e
-      jkube.io/git-branch: ed7285c3c75f19f4de05588f49b50dfb3f7f570e
+      jkube.io/git-commit: 905b19f44fadd99b2fff5958b318fc13fec75d4e
+      jkube.io/git-branch: 905b19f44fadd99b2fff5958b318fc13fec75d4e
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -50,8 +50,8 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: ed7285c3c75f19f4de05588f49b50dfb3f7f570e
-      jkube.io/git-branch: ed7285c3c75f19f4de05588f49b50dfb3f7f570e
+      jkube.io/git-commit: 905b19f44fadd99b2fff5958b318fc13fec75d4e
+      jkube.io/git-branch: 905b19f44fadd99b2fff5958b318fc13fec75d4e
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -71,11 +71,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: ed7285c3c75f19f4de05588f49b50dfb3f7f570e
+          jkube.io/git-branch: 905b19f44fadd99b2fff5958b318fc13fec75d4e
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: ed7285c3c75f19f4de05588f49b50dfb3f7f570e
+          jkube.io/git-commit: 905b19f44fadd99b2fff5958b318fc13fec75d4e
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
@@ -93,7 +93,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.33.117:443/spinnaker_poc/hello-svc:ed7285c3c75f19f4de05588f49b50dfb3f7f570e
+          image: 172.17.33.117:443/spinnaker_poc/hello-svc:905b19f44fadd99b2fff5958b318fc13fec75d4e
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
