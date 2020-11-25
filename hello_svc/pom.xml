@@ -44,7 +44,7 @@
         <jkube.build.strategy>jib</jkube.build.strategy>
 
          <version.number>${git.commit.time}.${git.commit.id.abbrev}</version.number> 
-               <jkube.generator.name>172.17.33.117:443/spinnaker_poc/hello-svc:${project.version}</jkube.generator.name>
+            <!--   <jkube.generator.name>172.17.33.117:443/spinnaker_poc/hello-svc:${project.version}</jkube.generator.name> moved to command line from jenkins -->
         <!--        <jkube.generator.name>localhost:5000/spinnaker_poc/hello-svc:${project.version}-{maven.build.timestamp}</jkube.generator.name>-->
     </properties>
 
