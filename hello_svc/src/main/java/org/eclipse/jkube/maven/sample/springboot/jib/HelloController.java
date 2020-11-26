@@ -23,7 +23,7 @@ public class HelloController {
 
     @RequestMapping("/")
     public String index() {
-        return "GreetingZ from " + name + " (Powered by Spring Boot and JIB)!!";
+        return "Greeting from " + name + " (Powered by Spring Boot and JIB)!!";
     }
 
     @Value("${my_name}")
