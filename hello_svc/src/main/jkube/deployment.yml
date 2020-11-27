@@ -4,6 +4,10 @@ metadata:
     traffic.spinnaker.io/load-balancers: '["service ${project.artifactId}1"]'
 spec:
   replicas: 2
+    replicas: 2
+  selector:
+    matchLabels:
+      tier: forreplicaset
   template:
     spec:
       volumes:
