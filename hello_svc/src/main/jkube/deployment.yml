@@ -1,12 +1,12 @@
 metadata:
   annotations:
     configmap.jkube.io/update-on-change: ${project.artifactId}
-    traffic.spinnaker.io/load-balancers: '["service ${project.artifactId}"]'  # used to define replicaset that can be turned into server group on spinnaker
+#    traffic.spinnaker.io/load-balancers: '["service ${project.artifactId}"]'  # used to define replicaset that can be turned into server group on spinnaker
 spec:
   replicas: 2
-  selector:
-    matchLabels:
-      tier: forreplicaset                                                      # used to define replicaset that can be turned into server group on spinnaker
+#  selector:
+#    matchLabels:
+#      tier: forreplicaset                                                      # used to define replicaset that can be turned into server group on spinnaker
   template:
     spec:
       volumes:
