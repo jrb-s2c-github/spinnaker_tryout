@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: a38f7bbf3c19937c6ccaceeb9c8787f088746a5f
-      jkube.io/git-branch: a38f7bbf3c19937c6ccaceeb9c8787f088746a5f
+      jkube.io/git-commit: 4bb3de4b97d533c78e1f757e7f29b77f5391cef3
+      jkube.io/git-branch: 4bb3de4b97d533c78e1f757e7f29b77f5391cef3
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -51,8 +51,8 @@ items:
       configmap.jkube.io/update-on-change: hello-svc
       traffic.spinnaker.io/load-balancers: '["service hello-svc1"]'
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: a38f7bbf3c19937c6ccaceeb9c8787f088746a5f
-      jkube.io/git-branch: a38f7bbf3c19937c6ccaceeb9c8787f088746a5f
+      jkube.io/git-commit: 4bb3de4b97d533c78e1f757e7f29b77f5391cef3
+      jkube.io/git-branch: 4bb3de4b97d533c78e1f757e7f29b77f5391cef3
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -67,17 +67,18 @@ items:
     selector:
       matchLabels:
         app: hello-svc
+        tier: forreplicaset
         provider: jkube
         group: prmgmdpc-spinnakerpoc
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: a38f7bbf3c19937c6ccaceeb9c8787f088746a5f
+          jkube.io/git-branch: 4bb3de4b97d533c78e1f757e7f29b77f5391cef3
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           traffic.spinnaker.io/load-balancers: '["service hello-svc1"]'
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: a38f7bbf3c19937c6ccaceeb9c8787f088746a5f
+          jkube.io/git-commit: 4bb3de4b97d533c78e1f757e7f29b77f5391cef3
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
@@ -95,7 +96,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.32.210:443/spinnaker_poc/hello-svc:a38f7bbf3c19937c6ccaceeb9c8787f088746a5f
+          image: 172.17.32.210:443/spinnaker_poc/hello-svc:4bb3de4b97d533c78e1f757e7f29b77f5391cef3
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
