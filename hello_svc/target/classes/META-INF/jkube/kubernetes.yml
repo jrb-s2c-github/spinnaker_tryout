@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 3a897b3ce2c7fbe5df4ae4d4abad3d2e2f31825d
-      jkube.io/git-branch: 3a897b3ce2c7fbe5df4ae4d4abad3d2e2f31825d
+      jkube.io/git-commit: 69791bf73154fd68a8482f7b617306a552ab0009
+      jkube.io/git-branch: 69791bf73154fd68a8482f7b617306a552ab0009
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -49,10 +49,9 @@ items:
   metadata:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
-      traffic.spinnaker.io/load-balancers: '["service hello-svc"]'
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 3a897b3ce2c7fbe5df4ae4d4abad3d2e2f31825d
-      jkube.io/git-branch: 3a897b3ce2c7fbe5df4ae4d4abad3d2e2f31825d
+      jkube.io/git-commit: 69791bf73154fd68a8482f7b617306a552ab0009
+      jkube.io/git-branch: 69791bf73154fd68a8482f7b617306a552ab0009
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -67,18 +66,16 @@ items:
     selector:
       matchLabels:
         app: hello-svc
-        tier: forreplicaset
         provider: jkube
         group: prmgmdpc-spinnakerpoc
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 3a897b3ce2c7fbe5df4ae4d4abad3d2e2f31825d
+          jkube.io/git-branch: 69791bf73154fd68a8482f7b617306a552ab0009
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
-          traffic.spinnaker.io/load-balancers: '["service hello-svc"]'
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 3a897b3ce2c7fbe5df4ae4d4abad3d2e2f31825d
+          jkube.io/git-commit: 69791bf73154fd68a8482f7b617306a552ab0009
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
@@ -96,7 +93,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/hello-svc:3a897b3ce2c7fbe5df4ae4d4abad3d2e2f31825d
+          image: 172.17.209.204:443/spinnaker_poc/hello-svc:69791bf73154fd68a8482f7b617306a552ab0009
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
