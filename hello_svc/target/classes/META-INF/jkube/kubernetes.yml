@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 250aa2da762e66e24d28055c280388c14be2daec
-      jkube.io/git-branch: 250aa2da762e66e24d28055c280388c14be2daec
+      jkube.io/git-commit: f43f38c104684e1dc81c0bb460a5af958b47bcf1
+      jkube.io/git-branch: f43f38c104684e1dc81c0bb460a5af958b47bcf1
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -49,9 +49,10 @@ items:
   metadata:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
+      traffic.spinnaker.io/load-balancers: '["service hello-svc"]'
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 250aa2da762e66e24d28055c280388c14be2daec
-      jkube.io/git-branch: 250aa2da762e66e24d28055c280388c14be2daec
+      jkube.io/git-commit: f43f38c104684e1dc81c0bb460a5af958b47bcf1
+      jkube.io/git-branch: f43f38c104684e1dc81c0bb460a5af958b47bcf1
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -71,11 +72,12 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 250aa2da762e66e24d28055c280388c14be2daec
+          jkube.io/git-branch: f43f38c104684e1dc81c0bb460a5af958b47bcf1
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
+          traffic.spinnaker.io/load-balancers: '["service hello-svc"]'
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 250aa2da762e66e24d28055c280388c14be2daec
+          jkube.io/git-commit: f43f38c104684e1dc81c0bb460a5af958b47bcf1
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
@@ -93,7 +95,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.32.210:443/spinnaker_poc/hello-svc:250aa2da762e66e24d28055c280388c14be2daec
+          image: 172.17.32.210:443/spinnaker_poc/hello-svc:f43f38c104684e1dc81c0bb460a5af958b47bcf1
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
