@@ -1,7 +1,7 @@
 metadata:
   annotations:
     configmap.jkube.io/update-on-change: ${project.artifactId}
-    traffic.spinnaker.io/load-balancers: '["service ${project.artifactId}1"]'
+    traffic.spinnaker.io/load-balancers: '["service ${project.artifactId}"]'
 spec:
   replicas: 2
   selector:
