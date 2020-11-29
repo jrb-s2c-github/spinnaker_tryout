@@ -38,7 +38,7 @@ public class AuthorRepositoryImpl  implements AuthorRepository {
 //    private final String restRoot;
 
     AuthorRepositoryImpl() {
-        ServiceRegistry serviceRegistry = new ServiceRegistry();
+        serviceRegistry = new ServiceRegistry();
 
     }
 
