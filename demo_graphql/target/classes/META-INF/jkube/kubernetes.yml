@@ -7,16 +7,16 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: e0fadc2760159e368185e48c0906e973ed55b313
-      jkube.io/git-branch: e0fadc2760159e368185e48c0906e973ed55b313
-      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo-GraphQL
+      jkube.io/git-commit: 94010287aafbc1b4a88aedb3ba3ba328d511d60f
+      jkube.io/git-branch: 94010287aafbc1b4a88aedb3ba3ba328d511d60f
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-graphql
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
       prometheus.io/port: "9779"
       prometheus.io/scrape: "true"
     labels:
       expose: "true"
-      app: Demo-GraphQL
+      app: demo-graphql
       provider: jkube
       version: 0.0.1-SNAPSHOT
       group: prmgmdpc-spinnakerpoc
@@ -28,7 +28,7 @@ items:
       protocol: TCP
       targetPort: 8080
     selector:
-      app: Demo-GraphQL
+      app: demo-graphql
       provider: jkube
       group: prmgmdpc-spinnakerpoc
     type: NodePort
@@ -36,7 +36,7 @@ items:
   kind: ConfigMap
   metadata:
     labels:
-      app: Demo-GraphQL
+      app: demo-graphql
       provider: jkube
       version: 0.0.1-SNAPSHOT
       group: prmgmdpc-spinnakerpoc
@@ -49,14 +49,14 @@ items:
   kind: Deployment
   metadata:
     annotations:
-      configmap.jkube.io/update-on-change: Demo-GraphQL
+      configmap.jkube.io/update-on-change: demo-graphql
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: e0fadc2760159e368185e48c0906e973ed55b313
-      jkube.io/git-branch: e0fadc2760159e368185e48c0906e973ed55b313
-      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo-GraphQL
+      jkube.io/git-commit: 94010287aafbc1b4a88aedb3ba3ba328d511d60f
+      jkube.io/git-branch: 94010287aafbc1b4a88aedb3ba3ba328d511d60f
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-graphql
       jkube.io/scm-tag: HEAD
     labels:
-      app: Demo-GraphQL
+      app: demo-graphql
       provider: jkube
       version: 0.0.1-SNAPSHOT
       group: prmgmdpc-spinnakerpoc
@@ -66,20 +66,20 @@ items:
     revisionHistoryLimit: 2
     selector:
       matchLabels:
-        app: Demo-GraphQL
+        app: demo-graphql
         provider: jkube
         group: prmgmdpc-spinnakerpoc
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: e0fadc2760159e368185e48c0906e973ed55b313
-          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo-GraphQL
+          jkube.io/git-branch: 94010287aafbc1b4a88aedb3ba3ba328d511d60f
+          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-graphql
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: e0fadc2760159e368185e48c0906e973ed55b313
-          configmap.jkube.io/update-on-change: Demo-GraphQL
+          jkube.io/git-commit: 94010287aafbc1b4a88aedb3ba3ba328d511d60f
+          configmap.jkube.io/update-on-change: demo-graphql
         labels:
-          app: Demo-GraphQL
+          app: demo-graphql
           provider: jkube
           version: 0.0.1-SNAPSHOT
           group: prmgmdpc-spinnakerpoc
@@ -94,7 +94,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/demo-graphql:e0fadc2760159e368185e48c0906e973ed55b313
+          image: 172.17.209.204:443/spinnaker_poc/demo-graphql:94010287aafbc1b4a88aedb3ba3ba328d511d60f
           imagePullPolicy: IfNotPresent
           name: spring-boot
           ports:
@@ -117,5 +117,5 @@ items:
             items:
             - key: application.properties
               path: application.properties
-            name: Demo-GraphQL
+            name: demo-graphql
           name: config
