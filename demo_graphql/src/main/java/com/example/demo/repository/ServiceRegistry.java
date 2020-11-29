@@ -19,11 +19,11 @@ import java.io.IOException;
 public class ServiceRegistry {
 
     @Value("${books_svc}")
-    private static String books_svc;
+    private String books_svc;
 
 
     @Value("${authors_svc}")
-    private static String authors_svc;
+    private String authors_svc;
 
 
 
@@ -32,7 +32,7 @@ public class ServiceRegistry {
 
     public static String determineK8sRootFromHttpTillPort(String svcName) throws IOException, ApiException {
         String result = null;
-
+        System.out.println("@@@@@@@@@@@@@2: trying to determine roor for " + svcName);
         ApiClient client = Config.defaultClient();
         Configuration.setDefaultApiClient(client);
         CoreV1Api api = new CoreV1Api(client);
@@ -62,19 +62,21 @@ public class ServiceRegistry {
     }
 
 
-    static String getRestRoot(Class toLookup)  {
+    String getRestRoot(Class toLookup)  {
         String svc = books_svc;
         String port = "8081";
         if (toLookup.equals(Author.class)) {
             port = "8082";
             svc = authors_svc;
         }
+        System.err.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
         String root = "http://localhost:" + port;
         if (svc != null) {
             try {
                 root = determineK8sRootFromHttpTillPort(svc);
             } catch (Exception e) {
                 e.printStackTrace();
+                System.err.println("ERROR");
                 // TODO better error handling
             }
         }

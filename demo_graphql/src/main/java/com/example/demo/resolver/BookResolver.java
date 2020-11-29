@@ -9,7 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class BookResolver implements GraphQLResolver<Book> {
 
-    private AuthorRepository authorRepository = new AuthorRepositoryImpl();
+    @Autowired
+    private AuthorRepository authorRepository;
 
     public BookResolver(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;

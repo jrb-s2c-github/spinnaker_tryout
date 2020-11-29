@@ -20,7 +20,11 @@ public class BookRepositoryImpl implements BookRepository {
     @Autowired
     ServiceRegistry serviceRegistry;
 
-    private final String restRoot = serviceRegistry.getRestRoot(Book.class);
+    private final String restRoot;
+
+    BookRepositoryImpl() {
+        restRoot = serviceRegistry.getRestRoot(Author.class);
+    }
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {

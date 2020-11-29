@@ -2,9 +2,6 @@ package com.example.demo.repository;
 
 import com.example.demo.model.Author;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -36,8 +33,11 @@ public class AuthorRepositoryImpl  implements AuthorRepository {
     @Autowired
     ServiceRegistry serviceRegistry;
 
-    private static  String restRoot = ServiceRegistry.getRestRoot(Author.class);
+    private final String restRoot;
 
+    AuthorRepositoryImpl() {
+        restRoot = serviceRegistry.getRestRoot(Author.class);
+    }
 
     @Override
     public Author findOne(Long id) {

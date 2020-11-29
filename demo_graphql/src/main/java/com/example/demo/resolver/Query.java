@@ -12,7 +12,8 @@ public class Query implements GraphQLQueryResolver {
     @Autowired
     private BookRepository bookRepository;
 
-    private AuthorRepository authorRepository = new AuthorRepositoryImpl();
+    @Autowired
+    private AuthorRepository authorRepository;
 
     public Query(AuthorRepository authorRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
