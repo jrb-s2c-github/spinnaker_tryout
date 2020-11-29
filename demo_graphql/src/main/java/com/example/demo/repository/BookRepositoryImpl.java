@@ -17,12 +17,13 @@ public class BookRepositoryImpl implements BookRepository {
 //    @Autowired
     RestTemplate restTemplate;
 
-    @Autowired
-    ServiceRegistry serviceRegistry;
+//    @Autowired
+//    ServiceRegistry serviceRegistry;
 
     private final String restRoot;
 
     BookRepositoryImpl() {
+        ServiceRegistry serviceRegistry = new ServiceRegistry();
         restRoot = serviceRegistry.getRestRoot(Author.class);
     }
 

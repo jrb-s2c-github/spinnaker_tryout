@@ -30,12 +30,13 @@ public class AuthorRepositoryImpl  implements AuthorRepository {
     @Autowired
     RestTemplate restTemplate;
 
-    @Autowired
-    ServiceRegistry serviceRegistry;
+//    @Autowired
+//    ServiceRegistry serviceRegistry;
 
     private final String restRoot;
 
     AuthorRepositoryImpl() {
+        ServiceRegistry serviceRegistry = new ServiceRegistry();
         restRoot = serviceRegistry.getRestRoot(Author.class);
     }
 
