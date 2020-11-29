@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: cd31088eca52849928bcca2500724d539bd2f26a
-      jkube.io/git-branch: cd31088eca52849928bcca2500724d539bd2f26a
+      jkube.io/git-commit: 939b77c640be9396cdb15b340cee3f8e0ecab7c4
+      jkube.io/git-branch: 939b77c640be9396cdb15b340cee3f8e0ecab7c4
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -50,8 +50,8 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: cd31088eca52849928bcca2500724d539bd2f26a
-      jkube.io/git-branch: cd31088eca52849928bcca2500724d539bd2f26a
+      jkube.io/git-commit: 939b77c640be9396cdb15b340cee3f8e0ecab7c4
+      jkube.io/git-branch: 939b77c640be9396cdb15b340cee3f8e0ecab7c4
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -61,7 +61,7 @@ items:
       group: prmgmdpc-spinnakerpoc
     name: hello-svc
   spec:
-    replicas: 2
+    replicas: 1
     revisionHistoryLimit: 2
     selector:
       matchLabels:
@@ -71,11 +71,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: cd31088eca52849928bcca2500724d539bd2f26a
+          jkube.io/git-branch: 939b77c640be9396cdb15b340cee3f8e0ecab7c4
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: cd31088eca52849928bcca2500724d539bd2f26a
+          jkube.io/git-commit: 939b77c640be9396cdb15b340cee3f8e0ecab7c4
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
@@ -93,7 +93,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/hello-svc:cd31088eca52849928bcca2500724d539bd2f26a
+          image: 172.17.209.204:443/spinnaker_poc/hello-svc:939b77c640be9396cdb15b340cee3f8e0ecab7c4
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
@@ -130,7 +130,7 @@ items:
         volumes:
         - configMap:
             items:
-            - key: my_name
-              path: my_name
+            - key: application.properties
+              path: application.properties
             name: hello-svc
           name: config
