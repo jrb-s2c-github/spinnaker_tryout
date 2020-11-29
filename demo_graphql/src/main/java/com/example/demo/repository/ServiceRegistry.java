@@ -46,7 +46,6 @@ public class ServiceRegistry {
                         null,
                         Integer.MAX_VALUE,
                         null,
-                        null,
                         TIME_OUT_VALUE,
                         Boolean.FALSE);
         for (V1Service service : listNamespacedService.getItems()) {
