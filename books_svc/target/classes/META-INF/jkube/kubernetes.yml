@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
-      jkube.io/git-commit: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
-      jkube.io/git-branch: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+      jkube.io/git-commit: e8e35c94cad4438990d55e13a59d1a52f06b7375
+      jkube.io/git-branch: e8e35c94cad4438990d55e13a59d1a52f06b7375
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -30,7 +30,6 @@ items:
       app: books-svc
       provider: jkube
       group: prmgmdpc-spinnakerpoc
-    type: NodePort
 - apiVersion: v1
   kind: ConfigMap
   metadata:
@@ -49,8 +48,8 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: books-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
-      jkube.io/git-commit: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
-      jkube.io/git-branch: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+      jkube.io/git-commit: e8e35c94cad4438990d55e13a59d1a52f06b7375
+      jkube.io/git-branch: e8e35c94cad4438990d55e13a59d1a52f06b7375
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -70,11 +69,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+          jkube.io/git-branch: e8e35c94cad4438990d55e13a59d1a52f06b7375
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+          jkube.io/git-commit: e8e35c94cad4438990d55e13a59d1a52f06b7375
           configmap.jkube.io/update-on-change: books-svc
         labels:
           app: books-svc
@@ -92,7 +91,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/hello-svc:d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+          image: 172.17.209.204:443/spinnaker_poc/books-svc:e8e35c94cad4438990d55e13a59d1a52f06b7375
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
