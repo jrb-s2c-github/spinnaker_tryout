@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 067857120617be0f823af1e10990fc29348b6e46
-      jkube.io/git-branch: 067857120617be0f823af1e10990fc29348b6e46
+      jkube.io/git-commit: 0274d6c2fee29a75e5a5932d004209d59108bcb0
+      jkube.io/git-branch: 0274d6c2fee29a75e5a5932d004209d59108bcb0
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-graphql
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -51,8 +51,8 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: demo-graphql
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 067857120617be0f823af1e10990fc29348b6e46
-      jkube.io/git-branch: 067857120617be0f823af1e10990fc29348b6e46
+      jkube.io/git-commit: 0274d6c2fee29a75e5a5932d004209d59108bcb0
+      jkube.io/git-branch: 0274d6c2fee29a75e5a5932d004209d59108bcb0
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-graphql
       jkube.io/scm-tag: HEAD
     labels:
@@ -72,11 +72,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 067857120617be0f823af1e10990fc29348b6e46
+          jkube.io/git-branch: 0274d6c2fee29a75e5a5932d004209d59108bcb0
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/demo-graphql
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 067857120617be0f823af1e10990fc29348b6e46
+          jkube.io/git-commit: 0274d6c2fee29a75e5a5932d004209d59108bcb0
           configmap.jkube.io/update-on-change: demo-graphql
         labels:
           app: demo-graphql
@@ -94,7 +94,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/demo-graphql:067857120617be0f823af1e10990fc29348b6e46
+          image: 172.17.209.204:443/spinnaker_poc/demo-graphql:0274d6c2fee29a75e5a5932d004209d59108bcb0
           imagePullPolicy: IfNotPresent
           name: spring-boot
           ports:
