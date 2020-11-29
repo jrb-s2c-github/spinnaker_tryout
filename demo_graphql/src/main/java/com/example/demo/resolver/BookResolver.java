@@ -5,7 +5,10 @@ import com.example.demo.model.Author;
 import com.example.demo.model.Book;
 import com.example.demo.repository.AuthorRepository;
 import com.example.demo.repository.AuthorRepositoryImpl;
+import io.kubernetes.client.openapi.ApiException;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.IOException;
 
 public class BookResolver implements GraphQLResolver<Book> {
 
@@ -16,7 +19,7 @@ public class BookResolver implements GraphQLResolver<Book> {
         this.authorRepository = authorRepository;
     }
 
-    public Author getAuthor(Book book) {
+    public Author getAuthor(Book book) throws IOException, ApiException {
         return authorRepository.findOne(book.getAuthorId());
     }
 }

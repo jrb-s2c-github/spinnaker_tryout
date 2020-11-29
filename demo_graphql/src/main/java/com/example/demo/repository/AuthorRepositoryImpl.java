@@ -1,10 +1,12 @@
 package com.example.demo.repository;
 
 import com.example.demo.model.Author;
+import io.kubernetes.client.openapi.ApiException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 @Component
@@ -31,35 +33,41 @@ public class AuthorRepositoryImpl  implements AuthorRepository {
     RestTemplate restTemplate;
 
 //    @Autowired
-//    ServiceRegistry serviceRegistry;
+    ServiceRegistry serviceRegistry;
 
-    private final String restRoot;
+//    private final String restRoot;
 
     AuthorRepositoryImpl() {
         ServiceRegistry serviceRegistry = new ServiceRegistry();
-        restRoot = serviceRegistry.getRestRoot(Author.class);
+
     }
 
     @Override
-    public Author findOne(Long id) {
+    public Author findOne(Long id) throws IOException, ApiException {
         return findAuthorById(id);
     }
 
     @Override
-    public Iterable<Author> findAll() {
-
+    public Iterable<Author> findAll() throws IOException, ApiException {
+        String restRoot = serviceRegistry.getRestRoot(Author.class);
         Author[] authors = restTemplate.getForObject(restRoot + "/getAuthors", Author[].class);
         return Arrays.asList(authors);
     }
 
     @Override
-    public Author findAuthorById(Long id) {
+    public Author findAuthorById(Long id) throws IOException, ApiException {
+        String restRoot = serviceRegistry.getRestRoot(Author.class);
         return restTemplate.getForObject(
                 restRoot+"getAuthorById?id="+id, Author.class);
     }
 
     @Override
-    public long count() {
+    public long count() throws IOException, ApiException {
+        String restRoot = null;
+
+            restRoot = serviceRegistry.getRestRoot(Author.class);
+
+
         return restTemplate.getForObject(
                 restRoot+"authorAmount", Long.class);
     }
