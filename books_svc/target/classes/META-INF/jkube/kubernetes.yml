@@ -6,29 +6,28 @@ items:
   kind: Service
   metadata:
     annotations:
-      jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 8ccc1161174d19921975f9c78a45ec69eb8c7e02
-      jkube.io/git-branch: 8ccc1161174d19921975f9c78a45ec69eb8c7e02
-      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
+      jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
+      jkube.io/git-commit: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+      jkube.io/git-branch: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
       prometheus.io/port: "9779"
       prometheus.io/scrape: "true"
     labels:
-      expose: "true"
-      app: hello-svc
+      app: books-svc
       provider: jkube
-      version: 1.0.18
+      version: 0.0.1
       group: prmgmdpc-spinnakerpoc
-    name: hello-svc
+    name: books-svc
   spec:
     ports:
-    - name: http
-      port: 8080
+    - name: sunproxyadmin
+      port: 8081
       protocol: TCP
-      targetPort: 8080
+      targetPort: 8081
     selector:
-      app: hello-svc
+      app: books-svc
       provider: jkube
       group: prmgmdpc-spinnakerpoc
     type: NodePort
@@ -36,11 +35,11 @@ items:
   kind: ConfigMap
   metadata:
     labels:
-      app: hello-svc
+      app: books-svc
       provider: jkube
-      version: 1.0.18
+      version: 0.0.1
       group: prmgmdpc-spinnakerpoc
-    name: hello-svc
+    name: books-svc
   data:
     application.properties: |
       my_name: Kubelet11
@@ -48,39 +47,39 @@ items:
   kind: Deployment
   metadata:
     annotations:
-      configmap.jkube.io/update-on-change: hello-svc
-      jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 8ccc1161174d19921975f9c78a45ec69eb8c7e02
-      jkube.io/git-branch: 8ccc1161174d19921975f9c78a45ec69eb8c7e02
-      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
+      configmap.jkube.io/update-on-change: books-svc
+      jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
+      jkube.io/git-commit: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+      jkube.io/git-branch: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
       jkube.io/scm-tag: HEAD
     labels:
-      app: hello-svc
+      app: books-svc
       provider: jkube
-      version: 1.0.18
+      version: 0.0.1
       group: prmgmdpc-spinnakerpoc
-    name: hello-svc
+    name: books-svc
   spec:
     replicas: 1
     revisionHistoryLimit: 2
     selector:
       matchLabels:
-        app: hello-svc
+        app: books-svc
         provider: jkube
         group: prmgmdpc-spinnakerpoc
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 8ccc1161174d19921975f9c78a45ec69eb8c7e02
-          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
-          jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
+          jkube.io/git-branch: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
+          jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 8ccc1161174d19921975f9c78a45ec69eb8c7e02
-          configmap.jkube.io/update-on-change: hello-svc
+          jkube.io/git-commit: d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
+          configmap.jkube.io/update-on-change: books-svc
         labels:
-          app: hello-svc
+          app: books-svc
           provider: jkube
-          version: 1.0.18
+          version: 0.0.1
           group: prmgmdpc-spinnakerpoc
       spec:
         containers:
@@ -93,20 +92,20 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/hello-svc:8ccc1161174d19921975f9c78a45ec69eb8c7e02
+          image: 172.17.209.204:443/spinnaker_poc/hello-svc:d575ad759f4f9e9e58f14e39efef4fdc1ff5ee6d
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
             httpGet:
               path: /health
-              port: 8080
+              port: 8081
               scheme: HTTP
             initialDelaySeconds: 180
             successThreshold: 1
           name: spring-boot
           ports:
-          - containerPort: 8080
-            name: http
+          - containerPort: 8081
+            name: sunproxyadmin
             protocol: TCP
           - containerPort: 9779
             name: prometheus
@@ -118,7 +117,7 @@ items:
             failureThreshold: 3
             httpGet:
               path: /health
-              port: 8080
+              port: 8081
               scheme: HTTP
             initialDelaySeconds: 10
             successThreshold: 1
@@ -132,5 +131,5 @@ items:
             items:
             - key: application.properties
               path: application.properties
-            name: hello-svc
+            name: books-svc
           name: config
