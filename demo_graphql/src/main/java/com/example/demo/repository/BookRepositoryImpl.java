@@ -18,13 +18,13 @@ public class BookRepositoryImpl implements BookRepository {
     RestTemplate restTemplate;
 
 //    @Autowired
-//    ServiceRegistry serviceRegistry;
+    ServiceRegistry serviceRegistry;
 
-    private final String restRoot;
+//    private final String restRoot;
 
     BookRepositoryImpl() {
-        ServiceRegistry serviceRegistry = new ServiceRegistry();
-        restRoot = serviceRegistry.getRestRoot(Author.class);
+        serviceRegistry = new ServiceRegistry();
+//        restRoot = serviceRegistry.getRestRoot(Author.class);
     }
 
     @Bean
@@ -35,19 +35,21 @@ public class BookRepositoryImpl implements BookRepository {
 
     @Override
     public long count() {
-
+        String restRoot = serviceRegistry.getRestRoot(Book.class);
         return restTemplate.getForObject(
                 restRoot+"bookAmount", Long.class);
     }
 
     @Override
     public Iterable<Book> findAll() {
+        String restRoot = serviceRegistry.getRestRoot(Book.class);
         Book[] books = restTemplate.getForObject(restRoot + "/getBooks", Book[].class);
         return Arrays.asList(books);
     }
 
     @Override
     public Book findBookById(String id) {
+        String restRoot = serviceRegistry.getRestRoot(Book.class);
         return restTemplate.getForObject(
                 restRoot+"getBookById?id="+id, Book.class);
     }

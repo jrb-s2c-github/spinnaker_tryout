@@ -25,8 +25,6 @@ public class ServiceRegistry {
     @Value("${authors_svc}")
     private String authors_svc;
 
-
-
     private static final String DEFAULT_NAME_SPACE = "default";
     private static final Integer TIME_OUT_VALUE = 180;
 
