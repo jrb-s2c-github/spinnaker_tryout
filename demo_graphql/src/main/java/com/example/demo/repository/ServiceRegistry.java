@@ -62,7 +62,7 @@ public class ServiceRegistry {
     }
 
 
-    static String getRestRoot(Class toLookup) throws IOException, ApiException {
+    static String getRestRoot(Class toLookup)  {
         String svc = books_svc;
         String port = "8081";
         if (toLookup.equals(Author.class)) {
@@ -71,7 +71,12 @@ public class ServiceRegistry {
         }
         String root = "http://localhost:" + port;
         if (svc != null) {
-            root = determineK8sRootFromHttpTillPort(svc);
+            try {
+                root = determineK8sRootFromHttpTillPort(svc);
+            } catch (Exception e) {
+                e.printStackTrace();
+                // TODO better error handling
+            }
         }
         return root;
     }
