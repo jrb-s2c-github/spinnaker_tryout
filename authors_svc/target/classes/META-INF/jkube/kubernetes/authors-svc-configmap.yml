@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: authors-svc
+    provider: jkube
+    version: 0.0.1
+    group: prmgmdpc-spinnakerpoc
+  name: authors-svc
+data:
+  application.properties: |
+    my_name: Kubelet11
