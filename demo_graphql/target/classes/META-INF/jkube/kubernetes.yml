@@ -7,20 +7,20 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: a2f8ab93a77800a021f41694e759e10429c55441
-      jkube.io/git-branch: a2f8ab93a77800a021f41694e759e10429c55441
-      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo_GraphQL
+      jkube.io/git-commit: ae5babcaeadc60581d17c3f0a2ccf23b2c2e2103
+      jkube.io/git-branch: ae5babcaeadc60581d17c3f0a2ccf23b2c2e2103
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo-GraphQL
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
       prometheus.io/port: "9779"
       prometheus.io/scrape: "true"
     labels:
       expose: "true"
-      app: Demo_GraphQL
+      app: Demo-GraphQL
       provider: jkube
       version: 0.0.1-SNAPSHOT
       group: prmgmdpc-spinnakerpoc
-    name: demo_graphql
+    name: demo-graphql
   spec:
     ports:
     - name: http
@@ -28,7 +28,7 @@ items:
       protocol: TCP
       targetPort: 8080
     selector:
-      app: Demo_GraphQL
+      app: Demo-GraphQL
       provider: jkube
       group: prmgmdpc-spinnakerpoc
     type: NodePort
@@ -36,11 +36,11 @@ items:
   kind: ConfigMap
   metadata:
     labels:
-      app: Demo_GraphQL
+      app: Demo-GraphQL
       provider: jkube
       version: 0.0.1-SNAPSHOT
       group: prmgmdpc-spinnakerpoc
-    name: demo_graphql
+    name: demo-graphql
   data:
     application.properties: |
       books_svc: books-svc
@@ -49,37 +49,37 @@ items:
   kind: Deployment
   metadata:
     annotations:
-      configmap.jkube.io/update-on-change: Demo_GraphQL
+      configmap.jkube.io/update-on-change: Demo-GraphQL
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: a2f8ab93a77800a021f41694e759e10429c55441
-      jkube.io/git-branch: a2f8ab93a77800a021f41694e759e10429c55441
-      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo_GraphQL
+      jkube.io/git-commit: ae5babcaeadc60581d17c3f0a2ccf23b2c2e2103
+      jkube.io/git-branch: ae5babcaeadc60581d17c3f0a2ccf23b2c2e2103
+      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo-GraphQL
       jkube.io/scm-tag: HEAD
     labels:
-      app: Demo_GraphQL
+      app: Demo-GraphQL
       provider: jkube
       version: 0.0.1-SNAPSHOT
       group: prmgmdpc-spinnakerpoc
-    name: demo_graphql
+    name: demo-graphql
   spec:
     replicas: 1
     revisionHistoryLimit: 2
     selector:
       matchLabels:
-        app: Demo_GraphQL
+        app: Demo-GraphQL
         provider: jkube
         group: prmgmdpc-spinnakerpoc
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: a2f8ab93a77800a021f41694e759e10429c55441
-          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo_GraphQL
+          jkube.io/git-branch: ae5babcaeadc60581d17c3f0a2ccf23b2c2e2103
+          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/Demo-GraphQL
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: a2f8ab93a77800a021f41694e759e10429c55441
-          configmap.jkube.io/update-on-change: Demo_GraphQL
+          jkube.io/git-commit: ae5babcaeadc60581d17c3f0a2ccf23b2c2e2103
+          configmap.jkube.io/update-on-change: Demo-GraphQL
         labels:
-          app: Demo_GraphQL
+          app: Demo-GraphQL
           provider: jkube
           version: 0.0.1-SNAPSHOT
           group: prmgmdpc-spinnakerpoc
@@ -94,7 +94,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/demo-graphql:a2f8ab93a77800a021f41694e759e10429c55441
+          image: 172.17.209.204:443/spinnaker_poc/demo-graphql:ae5babcaeadc60581d17c3f0a2ccf23b2c2e2103
           imagePullPolicy: IfNotPresent
           name: spring-boot
           ports:
@@ -117,5 +117,5 @@ items:
             items:
             - key: application.properties
               path: application.properties
-            name: Demo_GraphQL
+            name: Demo-GraphQL
           name: config
