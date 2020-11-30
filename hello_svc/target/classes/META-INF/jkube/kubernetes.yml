@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 26c798bb1741b396c9cdf2392936efd4ffb19b4d
-      jkube.io/git-branch: 26c798bb1741b396c9cdf2392936efd4ffb19b4d
+      jkube.io/git-commit: e4d7e8ddd04f874e694bde29bc9e420285310bd2
+      jkube.io/git-branch: e4d7e8ddd04f874e694bde29bc9e420285310bd2
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -43,15 +43,15 @@ items:
     name: hello-svc
   data:
     application.properties: |
-      my_name: Kubelet11
+      my_name: Kubelet12
 - apiVersion: apps/v1
   kind: Deployment
   metadata:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: 26c798bb1741b396c9cdf2392936efd4ffb19b4d
-      jkube.io/git-branch: 26c798bb1741b396c9cdf2392936efd4ffb19b4d
+      jkube.io/git-commit: e4d7e8ddd04f874e694bde29bc9e420285310bd2
+      jkube.io/git-branch: e4d7e8ddd04f874e694bde29bc9e420285310bd2
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -71,11 +71,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 26c798bb1741b396c9cdf2392936efd4ffb19b4d
+          jkube.io/git-branch: e4d7e8ddd04f874e694bde29bc9e420285310bd2
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 26c798bb1741b396c9cdf2392936efd4ffb19b4d
+          jkube.io/git-commit: e4d7e8ddd04f874e694bde29bc9e420285310bd2
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
@@ -93,7 +93,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/hello-svc:26c798bb1741b396c9cdf2392936efd4ffb19b4d
+          image: 172.17.209.204:443/spinnaker_poc/hello-svc:e4d7e8ddd04f874e694bde29bc9e420285310bd2
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
