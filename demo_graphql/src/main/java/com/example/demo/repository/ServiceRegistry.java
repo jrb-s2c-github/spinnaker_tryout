@@ -16,22 +16,25 @@ import java.util.List;
 @Component
 public class ServiceRegistry {
 
-//    @Value("${books_svc}"/)
+    //    @Value("${books_svc}"/)
     private String books_svc = "books_svc";
 
 
-//    @Value("${authors_svc}")
+    //    @Value("${authors_svc}")
     private String authors_svc = "authors_svc";
 
     private static final String DEFAULT_NAME_SPACE = "default";
     private static final Integer TIME_OUT_VALUE = 180;
 
-    public static String getSvcName(String tag) throws ApiException, IOException {
-        ApiClient client = Config.defaultClient();
-        Configuration.setDefaultApiClient(client);
-        CoreV1Api api = new CoreV1Api(client);
+    public static String getSvcName(String tag) {
+        String result = null;
+        try {
 
-        V1ConfigMapList configMaps = null; //Boolean watch
+            ApiClient client = Config.defaultClient();
+            Configuration.setDefaultApiClient(client);
+            CoreV1Api api = new CoreV1Api(client);
+
+            V1ConfigMapList configMaps = null; //Boolean watch
 
             configMaps = api.listNamespacedConfigMap(
                     DEFAULT_NAME_SPACE,
@@ -42,14 +45,19 @@ public class ServiceRegistry {
                     "app=demo-graphql",  //String labelSelector,
                     Integer.MAX_VALUE, //Integer limit,
                     null, // String resourceVersion,
-    //                null, //String resourceVersionMatch,
+                    //                null, //String resourceVersionMatch,
                     TIME_OUT_VALUE, //Integer timeoutSeconds,
                     Boolean.FALSE);
 
-        List<V1ConfigMap> items = configMaps.getItems();
-        V1ConfigMap configMap = items.get(items.size()-1);
-        String result = configMap.getData().get(tag);
-        System.out.println(result);
+
+            List<V1ConfigMap> items = configMaps.getItems();
+            V1ConfigMap configMap = items.get(items.size() - 1);
+            result = configMap.getData().get(tag);
+            System.out.println(result);
+
+        } catch (Exception e) {
+            return null; // try local host
+        }
         return result;
     }
 
@@ -66,7 +74,7 @@ public class ServiceRegistry {
                         null,
                         null,
                         null,
-                        null,
+                        null, // TODO use this for selections
                         Integer.MAX_VALUE,
                         null,
                         TIME_OUT_VALUE,
