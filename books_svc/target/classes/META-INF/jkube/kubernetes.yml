@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
-      jkube.io/git-commit: d06ac0fcd26a49fd4c2a7deb62fe0d78929b82cc
-      jkube.io/git-branch: d06ac0fcd26a49fd4c2a7deb62fe0d78929b82cc
+      jkube.io/git-commit: cd01d1c70cb607c50d13f6ee4a4acdb3d32e9e4a
+      jkube.io/git-branch: cd01d1c70cb607c50d13f6ee4a4acdb3d32e9e4a
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -48,8 +48,8 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: books-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
-      jkube.io/git-commit: d06ac0fcd26a49fd4c2a7deb62fe0d78929b82cc
-      jkube.io/git-branch: d06ac0fcd26a49fd4c2a7deb62fe0d78929b82cc
+      jkube.io/git-commit: cd01d1c70cb607c50d13f6ee4a4acdb3d32e9e4a
+      jkube.io/git-branch: cd01d1c70cb607c50d13f6ee4a4acdb3d32e9e4a
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -69,11 +69,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: d06ac0fcd26a49fd4c2a7deb62fe0d78929b82cc
+          jkube.io/git-branch: cd01d1c70cb607c50d13f6ee4a4acdb3d32e9e4a
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/books-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: d06ac0fcd26a49fd4c2a7deb62fe0d78929b82cc
+          jkube.io/git-commit: cd01d1c70cb607c50d13f6ee4a4acdb3d32e9e4a
           configmap.jkube.io/update-on-change: books-svc
         labels:
           app: books-svc
@@ -91,7 +91,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.209.204:443/spinnaker_poc/books-svc:d06ac0fcd26a49fd4c2a7deb62fe0d78929b82cc
+          image: 172.17.209.204:443/spinnaker_poc/books-svc:cd01d1c70cb607c50d13f6ee4a4acdb3d32e9e4a
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
