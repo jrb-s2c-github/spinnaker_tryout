@@ -50,6 +50,11 @@ public class BookController {
                 371,
                 AUTHOR_3)
         );
+        books.put("book-1", new Book("Yet another Harry Potter",
+                "ae345",
+                223,
+                AUTHOR_1)
+        );
     }
 
     @RequestMapping("/bookAmount")
