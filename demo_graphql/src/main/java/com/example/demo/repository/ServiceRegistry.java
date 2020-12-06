@@ -56,6 +56,7 @@ public class ServiceRegistry {
             System.out.println(result);
 
         } catch (Exception e) {
+            e.printStackTrace(System.err);
             return null; // try local host
         }
         return result;
