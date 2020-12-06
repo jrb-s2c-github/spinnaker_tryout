@@ -7,8 +7,8 @@ items:
   metadata:
     annotations:
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
-      jkube.io/git-commit: 43c1ddd70ec58596613be6b8e20d8f6bc07a2b1b
-      jkube.io/git-branch: 43c1ddd70ec58596613be6b8e20d8f6bc07a2b1b
+      jkube.io/git-commit: ec990ac4258edcb43ab0cbb14f2ebd489fd6226d
+      jkube.io/git-branch: ec990ac4258edcb43ab0cbb14f2ebd489fd6226d
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/authors-svc
       jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
@@ -48,8 +48,8 @@ items:
     annotations:
       configmap.jkube.io/update-on-change: authors-svc
       jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
-      jkube.io/git-commit: 43c1ddd70ec58596613be6b8e20d8f6bc07a2b1b
-      jkube.io/git-branch: 43c1ddd70ec58596613be6b8e20d8f6bc07a2b1b
+      jkube.io/git-commit: ec990ac4258edcb43ab0cbb14f2ebd489fd6226d
+      jkube.io/git-branch: ec990ac4258edcb43ab0cbb14f2ebd489fd6226d
       jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/authors-svc
       jkube.io/scm-tag: HEAD
     labels:
@@ -69,11 +69,11 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: 43c1ddd70ec58596613be6b8e20d8f6bc07a2b1b
+          jkube.io/git-branch: ec990ac4258edcb43ab0cbb14f2ebd489fd6226d
           jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/authors-svc
           jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc
           jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: 43c1ddd70ec58596613be6b8e20d8f6bc07a2b1b
+          jkube.io/git-commit: ec990ac4258edcb43ab0cbb14f2ebd489fd6226d
           configmap.jkube.io/update-on-change: authors-svc
         labels:
           app: authors-svc
@@ -91,7 +91,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.100.220:443/spinnaker_poc/authors-svc:43c1ddd70ec58596613be6b8e20d8f6bc07a2b1b
+          image: 172.17.100.220:443/spinnaker_poc/authors-svc:ec990ac4258edcb43ab0cbb14f2ebd489fd6226d
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
