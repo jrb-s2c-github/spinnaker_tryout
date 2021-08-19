@@ -22,10 +22,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <jkube.version>1.0.2</jkube.version>
+        <!--        <jkube.version>1.0.2</jkube.version>-->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <jkube.build.strategy>jib</jkube.build.strategy>
+        <!--        <jkube.build.strategy>jib</jkube.build.strategy>-->
         <!--        <java.version>11</java.version>-->
     </properties>
 
@@ -39,12 +39,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.graphql-java</groupId>
-            <artifactId>graphiql-spring-boot-starter</artifactId>
-            <version>3.10.0</version>
-        </dependency>
-
         <dependency>
             <groupId>com.graphql-java</groupId>
             <artifactId>graphql-spring-boot-starter</artifactId>
@@ -67,7 +61,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<!--        https://github.com/kubernetes-client/java/wiki/1.-Installation-->
+        <!--        https://github.com/kubernetes-client/java/wiki/1.-Installation-->
         <!--        <dependency>-->
         <!--            <groupId>io.kubernetes</groupId>-->
         <!--            <artifactId>client-java</artifactId>-->
@@ -82,6 +76,7 @@
         </dependency>
     </dependencies>
 
+
     <build>
 
         <plugins>
@@ -89,22 +84,41 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.1.4</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:11-jdk-slim</image>
+                    </from>
+                    <to>
+                        <image>docker.io/rbuhrmann/graphql_poc</image>
+                    </to>
+                </configuration>
+            </plugin>
+
         </plugins>
+
+
     </build>
     <profiles>
-        <profile>
-            <id>Jib-Zero-Config</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.eclipse.jkube</groupId>
-                        <artifactId>kubernetes-maven-plugin</artifactId>
-                        <version>${jkube.version}</version>
-                    </plugin>
-                </plugins>
+        <!--        <profile>-->
+        <!--            <id>Jib-Zero-Config</id>-->
+        <!--            <build>-->
+        <!--                <plugins>-->
+        <!--                    <plugin>-->
+        <!--                        <groupId>org.eclipse.jkube</groupId>-->
+        <!--                        <artifactId>kubernetes-maven-plugin</artifactId>-->
+        <!--                        <version>${jkube.version}</version>-->
+        <!--                    </plugin>-->
+        <!--                </plugins>-->
 
-                <!--                <finalName>hello-svc-${version.number}</finalName>-->
-            </build>
-        </profile>
+        <!--                &lt;!&ndash;                <finalName>hello-svc-${version.number}</finalName>&ndash;&gt;-->
+        <!--            </build>-->
+        <!--        </profile>-->
     </profiles>
+
+
 </project>
