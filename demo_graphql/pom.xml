@@ -96,6 +96,9 @@
                     <to>
                         <image>docker.io/rbuhrmann/graphql_poc</image>
                     </to>
+                    <container>
+                        <mainClass>com.example.demo.DemoGraphQlApplication</mainClass>
+                    </container>
                 </configuration>
             </plugin>
 
