@@ -15,7 +15,7 @@ public class DemoGraphQlApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoGraphQlApplication.class, args);
     }
-
+//
     @Bean
     public BookResolver authorResolver(AuthorRepository authorRepository) {
         return new BookResolver(authorRepository);
