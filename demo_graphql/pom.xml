@@ -95,6 +95,9 @@
                     </from>
                     <to>
                         <image>docker.io/rbuhrmann/graphql_poc</image>
+                        <tags>
+                           <tag>latest</tag>
+                        </tags>
                     </to>
                     <container>
                         <mainClass>com.example.demo.DemoGraphQlApplication</mainClass>
