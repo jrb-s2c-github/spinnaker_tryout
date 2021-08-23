@@ -76,7 +76,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.100.220:443/rbuhrmann/graphql-poc:latest
+          image: rbuhrmann/graphql-poc:latest
           imagePullPolicy: IfNotPresent
           name: spring-boot
           ports:
