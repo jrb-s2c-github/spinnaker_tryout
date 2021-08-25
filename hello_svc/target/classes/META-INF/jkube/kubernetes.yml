@@ -6,11 +6,6 @@ items:
   kind: Service
   metadata:
     annotations:
-      jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: f3f6bb9f60f50008a20a61f995093e221c842e0d
-      jkube.io/git-branch: f3f6bb9f60f50008a20a61f995093e221c842e0d
-      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
-      jkube.io/scm-tag: HEAD
       prometheus.io/path: /metrics
       prometheus.io/port: "9779"
       prometheus.io/scrape: "true"
@@ -49,11 +44,6 @@ items:
   metadata:
     annotations:
       configmap.jkube.io/update-on-change: hello-svc
-      jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-      jkube.io/git-commit: f3f6bb9f60f50008a20a61f995093e221c842e0d
-      jkube.io/git-branch: f3f6bb9f60f50008a20a61f995093e221c842e0d
-      jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
-      jkube.io/scm-tag: HEAD
     labels:
       app: hello-svc
       provider: jkube
@@ -71,11 +61,6 @@ items:
     template:
       metadata:
         annotations:
-          jkube.io/git-branch: f3f6bb9f60f50008a20a61f995093e221c842e0d
-          jkube.io/scm-url: https://github.com/spring-projects/spring-boot/spring-boot-starter-parent/hello-svc
-          jkube.io/git-url: https://github.com/takealot38-github/spinnaker_poc/
-          jkube.io/scm-tag: HEAD
-          jkube.io/git-commit: f3f6bb9f60f50008a20a61f995093e221c842e0d
           configmap.jkube.io/update-on-change: hello-svc
         labels:
           app: hello-svc
@@ -93,8 +78,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: 172.17.100.218:443/spinnaker_poc/hello-svc:f3f6bb9f60f50008a20a61f995093e221c842e0d
-          imagePullPolicy: IfNotPresent
+          image: rbuhrmann/hello-svc
           livenessProbe:
             failureThreshold: 3
             httpGet:
