@@ -76,8 +76,7 @@ items:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.name
-          image: rbuhrmann/graphql-poc:latest
-          imagePullPolicy: never
+          image: rbuhrmann/graphql-poc
           name: spring-boot
           ports:
           - containerPort: 8080
