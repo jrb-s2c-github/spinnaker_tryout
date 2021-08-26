@@ -117,10 +117,10 @@
 <!--                    <generateGitPropertiesFile>true</generateGitPropertiesFile>&lt;!&ndash; somehow necessary. otherwise the variables are not available in the pom &ndash;&gt;-->
 <!--                </configuration>-->
 <!--            </plugin>-->
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
 
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
@@ -133,9 +133,9 @@
                     <to>
                         <image>docker.io/rbuhrmann/hello-svc</image>
                     </to>
-<!--                    <container>-->
-<!--                        <mainClass>org.eclipse.jkube.maven.sample.springboot.jib.HelloApplication</mainClass>-->
-<!--                    </container>-->
+                    <container>
+                        <mainClass>org.eclipse.jkube.maven.sample.springboot.jib.HelloApplication</mainClass>
+                    </container>
                 </configuration>
             </plugin>
 
