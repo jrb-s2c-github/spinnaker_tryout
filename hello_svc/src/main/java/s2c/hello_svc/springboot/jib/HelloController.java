@@ -11,7 +11,7 @@
  * Contributors:
  * Red Hat, Inc. - initial API and implementation
  */
-package org.eclipse.jkube.maven.sample.springboot.jib;
+package s2c.hello_svc.springboot.jib;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
