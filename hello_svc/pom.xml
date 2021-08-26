@@ -133,9 +133,9 @@
                     <to>
                         <image>docker.io/rbuhrmann/hello-svc</image>
                     </to>
-                    <container>
-                        <mainClass>org.eclipse.jkube.maven.sample.springboot.jib.HelloApplication</mainClass>
-                    </container>
+<!--                    <container>-->
+<!--                        <mainClass>org.eclipse.jkube.maven.sample.springboot.jib.HelloApplication</mainClass>-->
+<!--                    </container>-->
                 </configuration>
             </plugin>
 
