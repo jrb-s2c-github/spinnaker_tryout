@@ -1,2 +1,0 @@
-# spinnaker_poc
-

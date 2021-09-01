@@ -1,4 +1,0 @@
-data:
-#  application.properties: |
-   books_svc: books-svc
-   authors_svc: authors-svc

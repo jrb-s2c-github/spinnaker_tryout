@@ -11,16 +11,16 @@
  * Contributors:
  * Red Hat, Inc. - initial API and implementation
  */
-package org.eclipse.jkube.maven.sample.springboot.jib;
+package s2c.hello_svc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class Application {
+@SpringBootApplication(scanBasePackages = {"s2c.hello_svc"})
+public class HelloApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(HelloApplication.class, args);
     }
 
 }
