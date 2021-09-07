@@ -6,7 +6,7 @@ metadata:
     app: hello-svc
     provider: jkube
     version: 1.0.18
-    group: prmgmdpc-spinnakerpoc
+    group: s2c-spinnakertryout
   name: hello-svc
 data:
   application.properties: |

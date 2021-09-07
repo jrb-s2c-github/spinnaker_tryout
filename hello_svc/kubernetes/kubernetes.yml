@@ -1,0 +1,120 @@
+---
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      annotations:
+        prometheus.io/path: /metrics
+        prometheus.io/port: "9779"
+        prometheus.io/scrape: "true"
+      labels:
+        expose: "true"
+        app: hello-svc
+        provider: jkube
+        version: 1.0.18
+        group: s2c-spinnakertryout
+      name: hello-svc
+    spec:
+      ports:
+        - name: http
+          port: 8080
+          protocol: TCP
+          targetPort: 8080
+      selector:
+        app: hello-svc
+        provider: jkube
+        group: s2c-spinnakertryout
+      type: NodePort
+  - apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      labels:
+        app: hello-svc
+        provider: jkube
+        version: 1.0.18
+        group: s2c-spinnakertryout
+      name: hello-svc
+    data:
+      application.properties: |
+        my_name: Kubelet12
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      annotations:
+        configmap.jkube.io/update-on-change: hello-svc
+      labels:
+        app: hello-svc
+        provider: jkube
+        version: 1.0.18
+        group: s2c-spinnakertryout
+      name: hello-svc
+    spec:
+      replicas: 1
+      revisionHistoryLimit: 2
+      selector:
+        matchLabels:
+          app: hello-svc
+          provider: jkube
+          group: s2c-spinnakertryout
+      template:
+        metadata:
+          annotations:
+            configmap.jkube.io/update-on-change: hello-svc
+          labels:
+            app: hello-svc
+            provider: jkube
+            version: 1.0.18
+            group: s2c-spinnakertryout
+        spec:
+          containers:
+            - env:
+                - name: KUBERNETES_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: metadata.namespace
+                - name: HOSTNAME
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: metadata.name
+              image: rbuhrmann/hello-svc
+              livenessProbe:
+                failureThreshold: 3
+                httpGet:
+                  path: /actuator/health
+                  port: 8080
+                  scheme: HTTP
+                initialDelaySeconds: 180
+                successThreshold: 1
+              name: spring-boot
+              ports:
+                - containerPort: 8080
+                  name: http
+                  protocol: TCP
+                - containerPort: 9779
+                  name: prometheus
+                  protocol: TCP
+                - containerPort: 8778
+                  name: jolokia
+                  protocol: TCP
+              readinessProbe:
+                failureThreshold: 3
+                httpGet:
+                  path: /actuator/health
+                  port: 8080
+                  scheme: HTTP
+                initialDelaySeconds: 10
+                successThreshold: 1
+              securityContext:
+                privileged: false
+#              volumeMounts:
+#                - mountPath: /deployments/config
+#                  name: config
+#          volumes:
+#            - configMap:
+#                items:
+#                  - key: application.properties
+#                    path: application.properties
+#                name: hello-svc
+#              name: config
