@@ -108,13 +108,13 @@ items:
                 successThreshold: 1
               securityContext:
                 privileged: false
-#              volumeMounts:
-#                - mountPath: /deployments/config
-#                  name: config
-#          volumes:
-#            - configMap:
-#                items:
-#                  - key: application.properties
-#                    path: application.properties
-#                name: hello-svc
-#              name: config
+              volumeMounts:
+                - mountPath: /deployments/config
+                  name: config
+          volumes:
+            - configMap:
+                items:
+                  - key: application.properties
+                    path: application.properties
+                name: hello-svc
+              name: config
