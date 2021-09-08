@@ -106,7 +106,7 @@ items:
                 items:
                   - key: application.properties
                     path: application.properties
-                name: hello-svc-cm
+                name: hello-svc
               name: config
 ---
 apiVersion: v1
@@ -116,7 +116,7 @@ metadata:
     app: hello-svc
     version: 1.0.18
     group: s2c-spinnakertryout
-  name: hello-svc-cm
+  name: hello-svc
 data:
   application.properties: |
     my_name: Kubelet13
