@@ -23,7 +23,7 @@ public class HelloController {
 
     @RequestMapping("/")
     public String index() {
-        return "Greeting from " + name;
+        return "Greetings from " + name;
     }
 
 //    @Value("${my_name}")
