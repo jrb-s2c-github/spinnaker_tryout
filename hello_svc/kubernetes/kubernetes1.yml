@@ -17,7 +17,7 @@ items:
           targetPort: 8080
       selector:
         app: hello-svc
-      type: ClusterIP
+      type: NodePort
     status:
       loadBalancer: {}
   - apiVersion: apps/v1
