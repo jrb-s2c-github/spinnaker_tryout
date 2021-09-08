@@ -23,10 +23,10 @@ public class HelloController {
 
     @RequestMapping("/")
     public String index() {
-        return "Greeting from " + name + " (Powered by Spring Boot and JIB)!!";
+        return "Greeting from " + name;
     }
 
-    @Value("${my_name}")
-    private String name;
+//    @Value("${my_name}")
+    private String name = "Minikube";
 
 }
