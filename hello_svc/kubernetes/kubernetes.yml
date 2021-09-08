@@ -12,7 +12,6 @@ items:
       labels:
         expose: "true"
         app: hello-svc
-        provider: jkube
         version: 1.0.18
         group: s2c-spinnakertryout
       name: hello-svc
@@ -24,7 +23,6 @@ items:
           targetPort: 8080
       selector:
         app: hello-svc
-        provider: jkube
         group: s2c-spinnakertryout
       type: NodePort
   - apiVersion: v1
@@ -32,7 +30,6 @@ items:
     metadata:
       labels:
         app: hello-svc
-        provider: jkube
         version: 1.0.18
         group: s2c-spinnakertryout
       name: hello-svc
@@ -42,11 +39,8 @@ items:
   - apiVersion: apps/v1
     kind: Deployment
     metadata:
-      annotations:
-        configmap.jkube.io/update-on-change: hello-svc
       labels:
         app: hello-svc
-        provider: jkube
         version: 1.0.18
         group: s2c-spinnakertryout
       name: hello-svc
@@ -56,15 +50,11 @@ items:
       selector:
         matchLabels:
           app: hello-svc
-          provider: jkube
           group: s2c-spinnakertryout
       template:
         metadata:
-          annotations:
-            configmap.jkube.io/update-on-change: hello-svc
           labels:
             app: hello-svc
-            provider: jkube
             version: 1.0.18
             group: s2c-spinnakertryout
         spec:
@@ -116,7 +106,7 @@ items:
                 items:
                   - key: application.properties
                     path: application.properties
-                name: hello-svc
+                name: hello-svc-cm
               name: config
 ---
 apiVersion: v1
@@ -124,10 +114,9 @@ kind: ConfigMap
 metadata:
   labels:
     app: hello-svc
-    provider: jkube
     version: 1.0.18
     group: s2c-spinnakertryout
-  name: hello-svc
+  name: hello-svc-cm
 data:
   application.properties: |
     my_name: Kubelet13
