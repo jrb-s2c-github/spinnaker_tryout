@@ -12,12 +12,12 @@ items:
     spec:
       ports:
         - name: 80-8080
-          port: 80
+          port: 5555
           protocol: TCP
           targetPort: 8080
       selector:
         app: hello-svc
-      type: ClusterIP
+      type: NodePort
     status:
       loadBalancer: { }
   - apiVersion: apps/v1
