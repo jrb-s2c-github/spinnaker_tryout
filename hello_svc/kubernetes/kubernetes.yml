@@ -109,7 +109,7 @@ items:
               securityContext:
                 privileged: false
               volumeMounts:
-                - mountPath: /deployments/config
+                - mountPath: /config
                   name: config
           volumes:
             - configMap:
