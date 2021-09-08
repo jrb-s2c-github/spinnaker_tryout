@@ -1,0 +1,46 @@
+---
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello-svc
+      name: hello-svc
+    spec:
+      ports:
+        - name: 80-8080
+          port: 80
+          protocol: TCP
+          targetPort: 8080
+      selector:
+        app: hello-svc
+      type: ClusterIP
+    status:
+      loadBalancer: { }
+  - apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello-svc
+      name: hello-svc
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: hello-svc
+      strategy: { }
+      template:
+        metadata:
+          creationTimestamp: null
+          labels:
+            app: hello-svc
+        spec:
+          containers:
+            - image: rbuhrmann/hello-svc
+              name: hello-svc
+              resources: { }
+    status: { }
