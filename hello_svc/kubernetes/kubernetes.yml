@@ -118,3 +118,16 @@ items:
                     path: application.properties
                 name: hello-svc
               name: config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: hello-svc
+    provider: jkube
+    version: 1.0.18
+    group: s2c-spinnakertryout
+  name: hello-svc
+data:
+  application.properties: |
+    my_name: Kubelet12
