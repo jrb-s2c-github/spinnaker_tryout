@@ -101,7 +101,9 @@
                         <image>openjdk:11-jdk-slim</image>
                     </from>
                     <to>
-                        <image>docker.io/rbuhrmann/hello-svc</image>
+                        <tags>
+                            <tag>tag2</tag>
+                        </tags>
                     </to>
                 </configuration>
             </plugin>
