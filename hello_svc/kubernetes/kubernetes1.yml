@@ -40,7 +40,7 @@ items:
             app: hello-svc
         spec:
           containers:
-            - image: rbuhrmann/hello-svc
+            - image: rbuhrmann/hello-svc:latest
               name: hello-svc
               resources: { }
     status: { }
