@@ -26,6 +26,6 @@ public class HelloController {
     }
 
 //    @Value("${my_name}")
-    private String name = "Minikube3";
+    private String name = "Minikube4";
 
 }
