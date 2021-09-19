@@ -43,5 +43,4 @@ items:
             - image: rbuhrmann/hello-svc
               name: hello-svc
               resources: { }
-              imagePullPolicy: Always
     status: { }
