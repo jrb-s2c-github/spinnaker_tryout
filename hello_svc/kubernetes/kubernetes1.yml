@@ -40,7 +40,7 @@ items:
             app: hello-svc
         spec:
           containers:
-            - image: rbuhrmann/hello-svc
+            - image: rbuhrmann/hello-svc:1
               name: hello-svc
               resources: { }
               imagePullPolicy: Always
