@@ -16,7 +16,7 @@ items:
           protocol: TCP
           targetPort: 8080
       selector:
-        app: hello-svc
+        app: hello_svc
       type: NodePort
     status:
       loadBalancer: {}
