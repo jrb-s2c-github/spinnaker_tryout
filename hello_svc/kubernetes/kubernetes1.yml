@@ -28,7 +28,7 @@ items:
         app: hello-svc
       name: hello-svc
     spec:
-      replicas: 2
+      replicas: 1
       selector:
         matchLabels:
           app: hello-svc
