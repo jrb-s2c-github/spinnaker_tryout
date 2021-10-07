@@ -41,7 +41,7 @@ items:
         spec:
           containers:
             - image: rbuhrmann/hello-svc
-              name: hello-svc
+              name: hello_svc
               resources: { }
               imagePullPolicy: Always
     status: { }
