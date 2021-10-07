@@ -7,8 +7,8 @@ items:
     metadata:
       creationTimestamp: null
       labels:
-        app: hello-svc
-      name: hello-svc
+        app: hello_svc
+      name: hello_svc
     spec:
       ports:
         - name: 9090-8080
@@ -25,8 +25,8 @@ items:
     metadata:
       creationTimestamp: null
       labels:
-        app: hello-svc
-      name: hello-svc
+        app: hello_svc
+      name: hello_svc
     spec:
       replicas: 1
       selector:
@@ -37,7 +37,7 @@ items:
         metadata:
           creationTimestamp: null
           labels:
-            app: hello-svc
+            app: hello_svc
         spec:
           containers:
             - image: rbuhrmann/hello-svc
