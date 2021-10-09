@@ -7,8 +7,8 @@ items:
     metadata:
       creationTimestamp: null
       labels:
-        app: hellosvc
-      name: hellosvc
+        app: hello-svc
+      name: hello-svc
     spec:
       ports:
         - name: 9090-8080
@@ -16,7 +16,7 @@ items:
           protocol: TCP
           targetPort: 8080
       selector:
-        app: hellosvc
+        app: hello-svc
       type: NodePort
     status:
       loadBalancer: {}
@@ -25,23 +25,23 @@ items:
     metadata:
       creationTimestamp: null
       labels:
-        app: hellosvc
-      name: hellosvc
+        app: hello-svc
+      name: hello-svc
     spec:
       replicas: 1
       selector:
         matchLabels:
-          app: hellosvc
+          app: hello-svc
       strategy: { }
       template:
         metadata:
           creationTimestamp: null
           labels:
-            app: hellosvc
+            app: hello-svc
         spec:
           containers:
-            - image: rbuhrmann/hellosvc
-              name: hellosvc
+            - image: rbuhrmann/hello-svc
+              name: hello-svc
               resources: { }
               imagePullPolicy: Always
     status: { }
