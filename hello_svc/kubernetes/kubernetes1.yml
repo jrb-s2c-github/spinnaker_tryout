@@ -44,7 +44,14 @@ items:
               name: hello-svc
               resources: { }
               imagePullPolicy: Always
-              envFrom:
-                - configMapRef:
-                    name: hello-svc-cm
+              volumeMounts:
+                - mountPath: /config
+                  name: config
+          volumes:
+            - configMap:
+                items:
+                  - key: application.properties
+                    path: application.properties
+                name: hello-svc-cm
+              name: config
     status: { }
