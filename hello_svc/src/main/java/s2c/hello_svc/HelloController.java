@@ -26,7 +26,7 @@ public class HelloController {
         return "Greetings from " + name;
     }
 
-    @Value("${my_name}")
+    @Value(value = "${my_name}")
     private String name;
 
 }
