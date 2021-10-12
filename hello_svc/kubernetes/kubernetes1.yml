@@ -44,4 +44,7 @@ items:
               name: hello-svc
               resources: { }
               imagePullPolicy: Always
+              envFrom:
+                - configMapRef:
+                    name: hello-svc-cm
     status: { }
