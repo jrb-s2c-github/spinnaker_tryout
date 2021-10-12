@@ -4,5 +4,5 @@ kind: ConfigMap
 metadata:
   name: hello-svc-cm
 data:
-  application.properties: |
+  application.yml: |-
     my_name: Kubelet12
