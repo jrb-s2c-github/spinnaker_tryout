@@ -1,36 +1,36 @@
 ---
 apiVersion: apps/v1
-  kind: Deployment
-  metadata:
-    creationTimestamp: null
-    labels:
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hello-svc
+  name: hello-svc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
       app: hello-svc
-    name: hello-svc
-  spec:
-    replicas: 1
-    selector:
-      matchLabels:
+  strategy: { }
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
         app: hello-svc
-    strategy: { }
-    template:
-      metadata:
-        creationTimestamp: null
-        labels:
-          app: hello-svc
-      spec:
-        containers:
-          - image: rbuhrmann/hello-svc
-            name: hello-svc
-            resources: { }
-            imagePullPolicy: Always
-            volumeMounts:
-              - mountPath: /config
-                name: config
-        volumes:
-          - configMap:
-              items:
-                - key: application.properties
-                  path: application.properties
-              name: hello-svc-cm
-            name: config
-  status: { }
+    spec:
+      containers:
+        - image: rbuhrmann/hello-svc
+          name: hello-svc
+          resources: { }
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /config
+              name: config
+      volumes:
+        - configMap:
+            items:
+              - key: application.properties
+                path: application.properties
+            name: hello-svc-cm
+          name: config
+status: { }
