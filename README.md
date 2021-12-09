@@ -1,6 +1,6 @@
 # spinnaker_tryout
 
-Used by guidea at 
+Used by guides at 
  1) https://dzone.com/articles/spinnaker-meets-minikube
  2) https://dzone.com/articles/spinnaker-meets-minikube-2-of-3
  3) https://dzone.com/articles/spinnaker-meets-minikube-part-3
