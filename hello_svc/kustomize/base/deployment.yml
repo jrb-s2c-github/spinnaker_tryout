@@ -22,7 +22,7 @@ spec:
         - image: rbuhrmann/hello-svc
           name: hello-svc
           resources: { }
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           volumeMounts:
             - mountPath: /config
               name: config
