@@ -5,4 +5,4 @@ metadata:
   name: hello-svc-cm
 data:
   application.properties: |
-    my_name: LocalKubelet
+    my_name: LocalKubelet1
