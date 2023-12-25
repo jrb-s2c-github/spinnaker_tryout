@@ -100,12 +100,12 @@
                     <from>
                         <image>openjdk:11-jdk-slim</image>
                     </from>
-<!--                    <to>-->
-<!--                        <image>localhost:5000/rbuhrmann/hello-svc</image>-->
-<!--                        <tags>-->
-<!--                            <tag>latest10</tag>-->
-<!--                        </tags>-->
-<!--                    </to>-->
+                    <to>
+                        <image>localhost:5000/rbuhrmann/hello-svc</image>
+                        <tags>
+                            <tag>latest10</tag>
+                        </tags>
+                    </to>
                     <allowInsecureRegistries>true</allowInsecureRegistries>
                 </configuration>
             </plugin>
